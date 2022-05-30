@@ -13,3 +13,5 @@ async def on_message(message):
     
     if message.content.starswith('!test'):
         await message.channel.send('hello')
+
+@client.run()
