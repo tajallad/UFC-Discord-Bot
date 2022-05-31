@@ -9,8 +9,6 @@ def fetch():
     event_url = f'https://{site}/events'
     response = s.get(event_url)
     soup = BeautifulSoup(response.text,'html.parser')
-    total = soup.find_all("div",attrs={"class", "althelete-total"})
-    total = int(total[0].text.split()[0])
     name_elements = soup.findAll("h3",attrs={"class", "c-card-event--result__headline"})
     names = []
     for i in range(8):
