@@ -3,10 +3,22 @@ import os
 from dotenv import load_dotenv
 from tabulate import tabulate
 from functions import list_fights, fetch, refresh_list
-#import aiocron
+import aiocron
+from datetime import datetime
 
 load_dotenv()
 client = discord.Client()
+
+@aiocron.crontab('0 1 * * *')
+async def cronjob():
+    fetch()
+    data = list_fights()
+    dates = data[0][1].split(" ")
+    now = datetime.now().strftime("%d %b").split(" ")
+    if ((dates[1]) == now[1]) and (dates[2 == now[0]]):
+        channel = client.get_channel(int(os.getenv('CHANNEL_ID')))
+        roleid = os.getenv('ROLE_ID')
+        await channel.send(f'<@&{roleid}> {data[0][0]}' + ' today @ ' + f'{data[0][2]}')
 
 @client.event
 async def on_ready():
