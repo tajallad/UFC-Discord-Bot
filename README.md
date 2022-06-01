@@ -9,7 +9,7 @@ This bot will check daily at 1:00 AM PDT for a UFC event matching the current da
 
 `!refresh` - Empty the current event table and populate with new data
 
-#Environment Variables
+# Environment Variables
 Bot host will need to provide a `.env` file. This file should contain the bot token, channel_id for which fight alerts are sent to, and role_id for which alerts are sent to.
 
 Example: 
