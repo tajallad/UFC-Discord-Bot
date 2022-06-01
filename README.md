@@ -13,7 +13,7 @@ Bot does not need to be mentioned for commands to work. Simply type a command in
 # Environment Variables
 Bot host will need to provide a `.env` file. This file should contain the bot token, channel_id for which fight alerts are sent to, and role_id for which alerts are sent to.
 
-Example: 
-`TOKEN=slaeicjslaicnas.12da2taa` 
-`CHANNEL_ID=102397510213754` 
-`ROLE_ID=219837985719821` 
+Example:  
+`TOKEN=slaeicjslaicnas.12da2taa`  
+`CHANNEL_ID=102397510213754`  
+`ROLE_ID=219837985719821`  
