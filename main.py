@@ -15,6 +15,7 @@ async def cronjob():
     data = list_fights()
     dates = data[0][1].split(" ")
     now = datetime.now().strftime("%d %b").split(" ")
+    now[0] = now[0].lstrip('0')
     if ((dates[1] == now[1]) and (dates[2] == now[0])):
         channel = client.get_channel(int(os.getenv('CHANNEL_ID')))
         roleid = os.getenv('ROLE_ID')
